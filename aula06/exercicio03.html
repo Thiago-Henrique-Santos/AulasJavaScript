@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercício03</title>
+    <style>
+        body{
+            background-color: #0051ff;
+            color: white;
+            font: normal 20pt Arial;
+        }
+
+        h1{
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Terceiro exercício de JS</h1>
+    <p>Usando e convertendo tipos de variáveis.</p>
+    <script>
+        var n1 = window.prompt('Digite um número:');//String
+        var n2 = window.prompt('Digite outro número:');//String
+        var juntar = n1 + n2;//concatenando
+        window.alert('Os números junto são ' + juntar);//concatenação
+        // (number + number) para adição
+        // (String + String) para concatenação
+
+        //Abaixo, modo 1 para conversão de variáveis | String -> Número (Inteiro)
+        var primeiro_numero = Number.parseInt(window.prompt('Digite o primeiro número:'));//convertendo o número como String do prompt para number
+        var segundo_numero = Number.parseInt(window.prompt('Digite o segundo número:'));//convertendo o número como String do prompt para number
+        var soma = primeiro_numero + segundo_numero;//adição
+        window.alert('A soma dos números é: ' + soma);
+
+        //Abaixo, modo 2 para conversão de variáveis | String -> Número (Float)
+        var num1 = window.prompt('Digite um número decimal:');
+        var num2 = window.prompt('Digite o segundo número decimal:');
+        var num1_number = Number.parseFloat(num1);//convertendo a string para número
+        var num2_number = Number.parseFloat(num2);//convertendo a string para número
+        soma = num1_number + num2_number;
+        window.alert('A soma é: ' + soma);
+
+        //Abaixo, comando para conversão que o próprio JS vê se vai ser para número inteiro ou float
+        //Geralmente pode usar este, mas ás vezes você precisa usar o "parse" e definir, pois dependendo da ocasião o JS pode fazer um e você queria outro
+        var number1 = Number(window.prompt('Digite um número:')); 
+        var number2 = Number(window.prompt('Digite outro número (se o primeiro foi inteiro, digite decimal, ou vice versa):'));
+        soma = number1 + number2;
+        window.alert('A soma entre os números é: ' + soma);
+
+        //Para usar todos os números, para usar Template String
+        window.alert(`Todos os números que você inseriu, foram: ${n1}, ${n2}, ${primeiro_numero}, ${segundo_numero}, ${num1_number}, ${num2_number}, ${number1}, ${number2}.`);
+        //para o alert acima, foi usado Template String
+    </script>
+</body>
+</html>

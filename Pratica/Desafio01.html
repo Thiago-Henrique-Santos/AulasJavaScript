@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio 01</title>
+</head>
+<body>
+    <h1> Sistema Brasileiro ou Estrangeiro </h1>
+    <!--as tres proximas tags abaixo estarão na mesma linha, na página, pois não se usou <br>, nem são tags de auto-quebra-de-linha-->
+    <label>Insira seu país: </label>
+    <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="verificar()">
+
+    <div id="resultado"></div>
+
+    <script>
+        function verificar(){
+            var txtpais = window.document.getElementById('pais');
+            var pais = txtpais.value.toString();
+            var resultado = window.document.getElementById('resultado');
+            resultado.innerHTML = `Você está vivendo está vivendo em <strong>${pais}</strong>`;
+            if(pais == 'Brasil'){
+                resultado.innerHTML += `<p>Você é brasileiro!</p>`;
+            }else{
+                resultado.innerHTML += `<p>Você é estrangeiro!</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

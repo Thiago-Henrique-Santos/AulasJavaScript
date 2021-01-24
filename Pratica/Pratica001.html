@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pratica 001</title>
+    <style>
+        body{
+            background-color: royalblue;
+        }
+
+        h1{
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2{
+            color: rgb(255, 115, 0);
+            font-weight: bold;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        h3{
+            color: rgb(255, 217, 0);
+            font-weight: bold;
+        }
+
+        font.infs{
+            font-size: 17px;
+            font-weight: bold;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <CENTER><h1> Prática de JS 001</h1></CENTER>
+    <h2>Esta página irá receber seus dados e imprimir o necessário!</h2>
+    <br>
+    <CENTER><h3>Suas informações:</h3></CENTER>
+    <script>
+        var name = window.prompt('Qual é seu nome?');
+        var age = Number.parseInt(window.prompt('Qual a sua idade?'));
+        var n1 = Number(window.prompt('Insira um número:'));
+        var n2 = Number(window.prompt('Insira outro número:'));
+        var soma = n1 + n2;
+        window.alert('A soma dos dois números é ' + soma);
+        var nDecimal = Number(window.prompt('Insira um número decimal (número com vírgulas):'));
+        window.alert('Obrigado por inserir o número: ' + nDecimal.toFixed(2).replace('.', ','));
+        document.write(`<font class="infs">Nome:</font> ${name}<br>`);
+        document.write(`<font class="infs">Seu nome em maiúsculas:</font> ${name.toUpperCase()}<br>`);
+        document.write(`<font class="infs">Seu nome em minúsculas:</font> ${name.toLowerCase()}<br>`);
+        document.write(`<font class="infs">Seu nome possui:</font> ${name.length} caracteres<br>`);
+        document.write(`<font class="infs">Idade:</font> ${age}<br>`);
+        document.write(`<font class="infs">A soma entre</font> ${n1} <font class="infs">e</font> ${n2} <font class="infs">é:</font> ${soma}<br>`);
+        document.write(`<font class="infs">O número decimal que você inseriu:</font> ${nDecimal.toFixed(2).replace('.', ',')}.`);
+    </script>
+</body>
+</html>

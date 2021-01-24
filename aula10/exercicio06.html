@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercicio 06 - Eventos DOM</title>
+    <style>
+        #area{
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-size: 20pt;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" onmousedown="segurar()">
+        Interaja...
+    </div>
+
+    <script>
+        //Primeira div - configurada em HTML (programação em JS)
+        function clicar(){
+            var area = window.document.getElementById('area');
+            area.innerText = 'Clicou!';
+            area.style.background = 'blue';
+            area.style.color = 'lime';
+        }
+
+        function entrar(){
+            var area = window.document.getElementById('area');
+            area.innerText = 'Relou...';
+            area.style.background = 'pink';
+            area.style.color = 'black';
+        }
+
+        function sair(){
+            var area = window.document.getElementById('area');
+            area.innerText = 'Interaja...';
+            area.style.background = 'green';
+            area.style.color = 'white';
+        }
+
+        function segurar(){
+            var area = window.document.getElementById('area');
+            area.style.background = 'black';
+            area.style.color = 'red';
+            area.innerHTML = 'Segurando...';
+        }
+
+        /*
+        //Configuração (e programação) em JS - se for usar, retirar as configurações (EX: onmouseenter="entrar") do HTML, e comentar o script, acima, sem configurar em JS
+        var area2 = window.document.getElementById('area-dois');
+        area2.addEventListener('mouseenter', entraMouse);
+        area2.addEventListener('mouseout', saiMouse);
+        function entraMouse(){
+            area2.style.background = 'Lime';
+            area2.innerText = 'Entrou!';
+        }
+        function saiMouse(){
+            area2.style.background = 'aqua';
+            area2.innerText = 'Saiu!';
+        }
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 004</title>
+    <style>
+        p.resultado{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18pt;
+            margin-top: 20px;
+        }
+
+        .bloco{
+            border-style: solid;
+            border-color: blue;
+            width: max-content;
+            height: max-content;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bloco">
+        <h1 class="titulo">Multiplicação de Valores</h1>
+        <input type="number" id="valor1-Multiplicacao"> x <input type="number" id="valor2-Multiplicacao">
+        <button type="button" onclick="multiplicar()"> Calcular </button>
+        <p class="resultado" id="resultadoMultiplicar"> Resultado </p>
+    </div>
+
+    <div class="bloco">
+        <h1 class="titulo">Soma de Valores</h1>
+        <input type="number" id="valor1-Soma"> + <input type="number" id="valor2-Soma">
+        <input type="button" value="Calcular" onclick="somar()">
+        <p class="resultado" id="resultadoSomar"> Resultado </p>
+    </div>
+
+    <div class="bloco">
+        <h1 class="titulo">Subtração de Valores</h1>
+        <input type="number" id="valor1-Subtracao"> - <input type="number" id="valor2-Subtracao">
+        <button type="button" id="subtracao" onclick="subtrair()"> Calcular </button>
+        <p class="resultado" id="resultadoSubtrair"> Resultado </p>
+    </div>
+
+    <div class="bloco">
+        <h1 class="titulo">Divisão de Valores</h1>
+        <input type="number" id="valor1-Divisao"> ÷ <input type="number" id="valor2-Divisao">
+        <button type="button" id="divisao" onclick="dividir()"> Calcular </button>
+        <p class="resultado" id="resultadoDividir"> Resultado </p>
+    </div>
+
+    <script>
+        //Funções para os cálculos
+        function multiplicar(){
+            var valor1 = window.document.getElementById('valor1-Multiplicacao');
+            var valor2 = window.document.getElementById('valor2-Multiplicacao');
+            var v1 = Number(valor1.value);
+            var v2 = Number(valor2.value);
+            var multiplicacao = v1*v2;
+            var resultado = window.document.getElementById('resultadoMultiplicar');
+            resultado.innerHTML = `<p class="resultado"> A multiplicação entre <strong>${v1}</strong> e <strong>${v2}</strong> é : <strong>${multiplicacao}</strong>.</p>`;
+        }
+
+        function somar(){
+            var valor1 = window.document.getElementById('valor1-Soma');
+            var valor2 = window.document.getElementById('valor2-Soma');
+            var v1 = Number(valor1.value);
+            var v2 = Number(valor2.value);
+            var soma = v1+v2;
+            var resultado = window.document.getElementById('resultadoSomar');
+            resultado.innerHTML = `<p class="resultado"> A soma entre <strong>${v1}</strong> e <strong>${v2}</strong> é : <strong>${soma}</strong>.</p>`;
+        }
+
+        function subtrair(){
+            var valor1 = window.document.getElementById('valor1-Subtracao');
+            var valor2 = window.document.getElementById('valor2-Subtracao');
+            var v1 = Number(valor1.value);
+            var v2 = Number(valor2.value);
+            var soma = v1-v2;
+            var resultado = window.document.getElementById('resultadoSubtrair');
+            resultado.innerHTML = `<p class="resultado"> A subtração entre <strong>${v1}</strong> e <strong>${v2}</strong> é : <strong>${soma}</strong>.</p>`;
+        }
+
+        function dividir(){
+            var valor1 = window.document.getElementById('valor1-Divisao');
+            var valor2 = window.document.getElementById('valor2-Divisao');
+            var v1 = Number(valor1.value);
+            var v2 = Number(valor2.value);
+            var soma = v1/v2;
+            var resultado = window.document.getElementById('resultadoDividir');
+            resultado.innerHTML = `<p class="resultado"> A divisão entre <strong>${v1}</strong> e <strong>${v2}</strong> é : <strong>${soma}</strong>.</p>`;
+        }
+
+        //Funções para interação dos blocos
+        var bloco_multiplicacao = window.document.getElementsByClassName('bloco')[0];
+        var bloco_soma = window.document.getElementsByClassName('bloco')[1];
+        var bloco_subtracao = window.document.getElementsByClassName('bloco')[2];
+        var bloco_divisao = window.document.getElementsByClassName('bloco')[3];
+
+        //Funções mouseenter
+        bloco_multiplicacao.addEventListener('mouseenter', entrouMultiplicacao);
+        bloco_soma.addEventListener('mouseenter', entrouSoma);
+        bloco_subtracao.addEventListener('mouseenter', entrouSubtracao);
+        bloco_divisao.addEventListener('mouseenter', entrouDivisao);
+
+        function entrouMultiplicacao(){
+            bloco_soma.style.background = 'gray';
+            bloco_soma.style.color = 'gray';
+
+            bloco_subtracao.style.background = 'gray';
+            bloco_subtracao.style.color = 'gray';
+
+            bloco_divisao.style.background = 'gray';
+            bloco_divisao.style.color = 'gray';
+        }
+
+        function entrouSoma(){
+            bloco_multiplicacao.style.background = 'gray';
+            bloco_multiplicacao.style.color = 'gray';
+
+            bloco_subtracao.style.background = 'gray';
+            bloco_subtracao.style.color = 'gray';
+
+            bloco_divisao.style.background = 'gray';
+            bloco_divisao.style.color = 'gray';
+        }
+
+        function entrouSubtracao(){
+            bloco_soma.style.background = 'gray';
+            bloco_soma.style.color = 'gray';
+
+            bloco_multiplicacao.style.background = 'gray';
+            bloco_multiplicacao.style.color = 'gray';
+
+            bloco_divisao.style.background = 'gray';
+            bloco_divisao.style.color = 'gray';
+        }
+
+        function entrouDivisao(){
+            bloco_soma.style.background = 'gray';
+            bloco_soma.style.color = 'gray';
+
+            bloco_subtracao.style.background = 'gray';
+            bloco_subtracao.style.color = 'gray';
+
+            bloco_multiplicacao.style.background = 'gray';
+            bloco_multiplicacao.style.color = 'gray';
+        }
+
+        //Configuração para mousemove, usando funções do mouseenter - para tirar bugs
+        bloco_multiplicacao.addEventListener('mousemove', entrouMultiplicacao);
+        bloco_soma.addEventListener('mousemove', entrouSoma);
+        bloco_subtracao.addEventListener('mousemove', entrouSubtracao);
+        bloco_divisao.addEventListener('mousemove', entrouDivisao);
+
+        //Funções mouseout
+        bloco_multiplicacao.addEventListener('mouseout', saiuMultiplicacao);
+        bloco_soma.addEventListener('mouseout', saiuSoma);
+        bloco_subtracao.addEventListener('mouseout', saiuSubtracao);
+        bloco_divisao.addEventListener('mouseout', saiuDivisao);
+
+        function saiuMultiplicacao(){
+            bloco_soma.style.background = 'none';
+            bloco_soma.style.color = 'black';
+
+            bloco_subtracao.style.background = 'none';
+            bloco_subtracao.style.color = 'black';
+
+            bloco_divisao.style.background = 'none';
+            bloco_divisao.style.color = 'black';
+        }
+
+        function saiuSoma(){
+            bloco_multiplicacao.style.background = 'none';
+            bloco_multiplicacao.style.color = 'black';
+
+            bloco_subtracao.style.background = 'none';
+            bloco_subtracao.style.color = 'black';
+
+            bloco_divisao.style.background = 'none';
+            bloco_divisao.style.color = 'black';
+        }
+
+        function saiuSubtracao(){
+            bloco_soma.style.background = 'none';
+            bloco_soma.style.color = 'black';
+
+            bloco_multiplicacao.style.background = 'none';
+            bloco_multiplicacao.style.color = 'black';
+
+            bloco_divisao.style.background = 'none';
+            bloco_divisao.style.color = 'black';
+        }
+
+        function saiuDivisao(){
+            bloco_soma.style.background = 'none';
+            bloco_soma.style.color = 'black';
+
+            bloco_subtracao.style.background = 'none';
+            bloco_subtracao.style.color = 'black';
+
+            bloco_multiplicacao.style.background = 'none';
+            bloco_multiplicacao.style.color = 'black';
+        }
+    </script>
+</body>
+</html>

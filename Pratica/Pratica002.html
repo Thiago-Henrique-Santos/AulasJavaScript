@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pratica 002</title>
+    <style>
+        body{
+            background-color: royalblue;
+        }
+
+        h1{
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2{
+            color: rgb(255, 115, 0);
+            font-weight: bold;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        h3{
+            color: rgb(255, 217, 0);
+            font-weight: bold;
+        }
+
+        font.infs{
+            font-size: 17px;
+            font-weight: bold;
+            color: gray;
+        }
+
+        font.var{
+            font-size: 17px;
+            font-weight: bold;
+            color: rgb(0, 17, 252);
+        }
+
+        font.result{
+            font-size: 17px;
+            font-weight: bold;
+            color: rgb(0, 252, 34);
+        }
+    </style>
+</head>
+<body>
+    <CENTER><h1> Prática de JS 002</h1></CENTER>
+    <h2>Com base nos números que você inseriu, antes dessa página abrir, o site deixará, logo abaixo, algumas contas feitas com estes números.</h2>
+    <br>
+    <CENTER><h3>Contas:</h3></CENTER>
+    <script>
+        var n1 = Number.parseFloat(window.prompt('Insira um número decimal:'));
+        var n2 = Number.parseInt(window.prompt('Insira um número interio:'));
+        var n3 = Number(window.prompt('Insira um outro número, inteiro:'));
+        var somaN1eN2 = n1+n2;
+        var n1ElevadoAn3 = n1**n3;
+        var n2ElevadoAn3 = n2**n3;
+        var subtracaoN2eN3 = n2 - n3;
+        var restoN3eN2 = n3%n2;
+        var divisaoN2eN1 = n2/n1;
+        var multiplicacaoN3eN1 = n3*n1;
+        window.alert('Obrigado pela atenção ao dar estes números! Entre e aproveite a página!');
+        document.write(`<font class="infs">Soma entre</font> <font class="var">${n1.toFixed(2).replace(".", ",")}</font> <font class="infs">e</font> <font class="var">${n2}</font> <font class="infs">é:</font> <font class="result">${somaN1eN2.toFixed(2).replace(".", ",")}</font><font class="infs">.</font><br>`);
+        document.write(`<font class="var">${n1.toFixed(2).replace(".", ",")}</font> <font class="infs">elevado a</font> <font class="var">${n3}</font> <font class="infs">é:</font> <font class="result">${n1ElevadoAn3.toFixed(2).replace(".", ",")}</font><font class="infs">.</font><br>`);
+        document.write(`<font class="var">${n2}</font> <font class="infs">elevado a</font> <font class="var">${n3}</font> <font class="infs">é:</font> <font class="result">${n2ElevadoAn3}</font><font class="infs">.</font><br>`);
+        document.write(`<font class="infs">Subtração entre</font> <font class="var">${n2}</font> <font class="infs">e</font> <font class="var">${n3}</font> <font class="infs">é:</font> <font class="result">${subtracaoN2eN3}</font><font class="infs">.</font><br>`);
+        document.write(`<font class="infs">Resto da divisão inteira de</font> <font class="var">${n3}</font> <font class="infs">sobre</font> <font class="var">${n2}</font> <font class="infs">é:</font> <font class="result">${restoN3eN2}</font><font class="infs">.</font><br>`);
+        document.write(`<font class="infs">Divisão de</font> <font class="var">${n2}</font> <font class="infs">sobre</font> <font class="var">${n1.toFixed(2).replace(".", ",")}</font> <font class="infs">é:</font> <font class="result">${divisaoN2eN1.toFixed(2).replace(".", ",")}</font><font class="infs">.</font><br>`);
+        document.write(`<font class="infs">Multiplicação entre</font> <font class="var">${n3}</font> <font class="infs">e</font> <font class="var">${n1.toFixed(2).replace(".", ",")}</font> <font class="infs">é:</font> <font class="result">${multiplicacaoN3eN1.toFixed(2).replace(".", ",")}</font><font class="infs">.</font><br>`);
+    </script>
+</body>
+</html>

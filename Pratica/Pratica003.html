@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratica 003</title>
+    <style>
+        #circulo{
+            background-color: blue;
+            width: 250px;
+            height: 250px;
+            line-height: 250px;
+            color: orange;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            font-size: 25pt;
+            border-radius: 50%;
+            float: left;
+        }
+
+        #quadrado{
+            background-color: yellow;
+            width: 250px;
+            height: 250px;
+            line-height: 250px;
+            color: brown;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            font-size: 25pt;
+            float: left;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="circulo" onmouseenter="relarCirculo()" onmouseout="sairCirculo()" onclick="clicarCirculo()">Interaja...</div>
+    <div id="quadrado">Interaja...</div>
+
+    <script>
+        function relarCirculo(){
+            var circulo = window.document.getElementById('circulo');
+            circulo.style.color = 'blue';
+            circulo.style.background = 'orange';
+        }
+        function sairCirculo(){
+            var circulo = window.document.getElementById('circulo');
+            circulo.style.color = 'orange';
+            circulo.style.background = 'blue';
+        }
+        function clicarCirculo(){
+            var circulo = window.document.getElementById('circulo');
+            circulo.style.color = 'brown';
+            circulo.style.background = 'yellow';
+        }
+
+        var quadrado = window.document.getElementById('quadrado');
+        quadrado.addEventListener('mouseenter', relarQuadrado);
+        quadrado.addEventListener('click', clicarQuadrado);
+        quadrado.addEventListener('mouseout', sairQuadrado);
+
+        function relarQuadrado(){
+            quadrado.style.background = 'brown';
+            quadrado.style.color = 'yellow';
+        }
+
+        function clicarQuadrado(){
+            quadrado.style.background = 'blue';
+            quadrado.style.color = 'orange';
+        }
+
+        function sairQuadrado(){
+            quadrado.style.background = 'yellow';
+            quadrado.style.color = 'brown';
+        }
+    </script>
+</body>
+</html>

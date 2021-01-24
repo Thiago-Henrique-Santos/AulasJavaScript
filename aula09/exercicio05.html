@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercício05</title>
+    <style>
+        body, html{
+            margin: 0;
+            padding: 0;
+            color:white;
+            background-color: rgb(87, 129, 243);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="NewSelector">Iniciando estudos com DOM</h1>
+    <p>aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JS</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0];
+        var p2 = window.document.getElementsByTagName('p')[1];
+        var corpo = window.document.body;
+        document.write('<br><CENTER id="startJS"><font color="Orange">A partir daqui estará algumas coisas programadas em JS, fora as mudanças nos textos originais, acima.</font></CENTER><br><br>');
+        document.write(`Está escrito assim, no primeiro parágrafo: ${p1.innerText}<br>`);
+        document.write('Está escrito e formatado assim, no segundo parágrafo: ' + p2.innerHTML + '<br>');
+        document.write(`O charset sendo usado é: ${window.document.charset} <br>`);
+        document.write(`O navegador sendo usado é: ${window.navigator.appName} <br>`);
+        document.write(`A URL é: ${window.document.URL} <br>`);
+        corpo.style.background = 'lime';
+        corpo.style.color = 'black';
+
+        var div = document.getElementById('msg');
+        div.innerHTML = "Trocando o texto e a formatação dele...";
+
+        var NSelect = document.querySelector('h1.NewSelector');
+        NSelect.style.background = 'blue';
+    </script>
+</body>
+</html>
