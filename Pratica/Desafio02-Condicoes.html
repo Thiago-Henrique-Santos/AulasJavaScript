@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exercicio 10</title>
+    <title>Desafio 02</title>
 </head>
 <body>
-    <h1> Sistema de Multas </h1>
-    <input type="number" name="txtvel" id="txtvel"> Km/h
-    <input type="button" value="Verificar" onclick="calcular()">
+    <h1> Brasileiro ou estrangeiro </h1>
+    <input type="text" name="txt_pais" id="txt_pais">
+    <input type="button" value="Verificar" onclick="verificar()">
     <div id="resultado"></div>
 
     <script>
-        function calcular(){
-            var txtv = window.document.querySelector('input#txtvel');
+        function verificar(){
+            var txt_pais = window.document.querySelector('input#txt_pais');
             var resultado = window.document.querySelector('div#resultado');
-            var vel = Number(txtv.value);
-            resultado.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}</strong> km/h</p>`;
-            if(vel>60){
-                resultado.innerHTML += `<p>Você está <strong>multado</strong> por excesso de velocidade!</p>`;
+            var pais = txt_pais.value;
+            resultado.innerHTML = `<p>Você mora em <strong>${pais}</strong>.</p>`;
+            if(pais == 'Brasil'){
+                resultado.innerHTML += `<p>Você é brasileiro!</p>`;
+            }else{
+                resultado.innerHTML += `<p>Você é estrangerio!</p>`;
             }
-            resultado.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`;
         }
     </script>
 </body>
